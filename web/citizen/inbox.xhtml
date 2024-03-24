@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Inbox | Messages</title>
+        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+        <link type="text/css" href="css/theme.css" rel="stylesheet"/>
+        <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet"/>
+        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'/>
+    </head>
+    <h:body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html" style="text-transform: uppercase; font-family: Cambria Math; font-weight: bolder;">#{gb.villageName} </a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <ul class="nav nav-icons">
+                            <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
+                            <li><a href="#"><i class="icon-bar-chart"></i></a></li>
+                        </ul>
+                        <form class="navbar-search pull-left input-append" action="#">
+                        <input type="text" class="span3"/>
+                        <button class="btn" type="button">
+                            <i class="icon-search"></i>
+                        </button>
+                        </form>
+                        <ul class="nav pull-right">
+                            
+                            <li><a href="#">#{gb.username}</a></li>
+                            <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/user_1.png" class="nav-avatar" />
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Your Profile</a></li>
+                                    <li><a href="#">Edit Profile</a></li>
+                                    <li><a href="#">Account Settings</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="http://localhost:8080/PFI/faces/authentication/login/login.xhtml">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+            </div>
+            <!-- /navbar-inner -->
+        </div>
+        <!-- /navbar -->
+        <div class="wrapper" style="background: url('images/1.png')">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <div class="sidebar">
+                            <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="resident-dashboard.xhtml"><i class="menu-icon icon-dashboard"></i>Home
+                                </a></li>
+                               
+                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-bullhorn">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Event News </a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="health-support.xhtml"><i class="icon-user-md"></i> Health Support </a></li>
+                                        <li><a href="education-support.xhtml"><i class="icon-book"></i> Education Support </a></li>
+                                        <li><a href="economic-support.xhtml"><i class="icon-money"></i> Economic Support </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="inbox.xhtml"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
+                                    #{gb.allResidentUnreadMessagesNumber}</b> </a></li>
+                                <li><a href="resident-profile.xhtml"><i class="menu-icon icon-user"></i>Profile</a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            <ul class="widget widget-menu unstyled">
+                                <li><a href="edit-profile.xhtml"><i class="menu-icon icon-edit"></i> Edit Profile </a></li>
+                                <li><a href="notification.xhtml"><i class="menu-icon icon-bell"></i>Notifications </a></li>
+                                <li><a href="numerator-profile.xhtml"><i class="menu-icon icon-user"></i>Numerator Profile </a></li>
+                                <li><a href="support-chart.xhtml"><i class="menu-icon icon-bar-chart"></i>Support Analysis </a></li>
+                                <li><a href="claimed.xhtml"><i class="menu-icon icon-refresh"></i>Claimed Support</a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            <ul class="widget widget-menu unstyled">
+                               
+                                <li><a href="http://localhost:8080/PFI/faces/authentication/login/login.xhtml"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>
+                        <!--/.sidebar-->
+                    </div>
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content">
+                            <div class="module message">
+                                <div class="module-head">
+                                    <h3>
+                                        Message</h3>
+                                </div>
+                                <div class="module-option clearfix">
+                                    <div class="pull-left">
+                                        <div class="btn-group">
+                                            <button class="btn">
+                                                Inbox</button>
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Inbox(11)</a></li>
+                                                <li><a href="#">Sent</a></li>
+                                                <li><a href="#">Draft(2)</a></li>
+                                                <li><a href="#">Trash</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Settings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Compose</a>
+                                    </div>
+                                </div>
+                                <div class="module-body table">
+                                    <table class="table table-message">
+                                        <tbody>
+                                            <tr class="heading">
+                                                <td class="cell-check">
+                                                    <input type="checkbox" class="inbox-checkbox"/>
+                                                </td>
+                                                <td class="cell-icon">
+                                                </td>
+                                                <td class="cell-author hidden-phone hidden-tablet">
+                                                    Numerator
+                                                </td>
+                                                <td class="cell-title">
+                                                    Subject
+                                                </td>
+                                                <td class="cell-icon hidden-phone hidden-tablet">
+                                                    Message
+                                                </td>
+                                                <td class="cell-time align-right">
+                                                    Date
+                                                </td>
+                                            </tr>
+                                            <c:forEach items="#{gb.allResidentUnreadMessagesByVillage}" var="ms" varStatus="status">
+                                            <tr class="unread">
+                                                <td class="cell-check">
+                                                    <h:form>
+                                                        <h:commandLink class="fa fa-eye" action="#{gb.residentSeenMessageById(ms.id)}" value="seen"></h:commandLink>
+                                                    </h:form>
+                                                </td>
+                                                <td class="cell-icon">
+                                                    <i class="icon-star"></i>
+                                                </td>
+                                                <td class="cell-author hidden-phone hidden-tablet">
+                                                    #{ms.senderName}
+                                                </td>
+                                                <td class="cell-title">
+                                                    #{ms.topic}
+                                                </td>
+                                                <td class="cell-icon hidden-phone hidden-tablet">
+                                                    <i class="icon-paper-clip"></i>
+                                                    #{ms.message}
+                                                </td>
+                                                <td class="cell-time align-right">
+                                                    #{ms.sentDate}
+                                                </td>
+                                            </tr>
+                                               </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="module-foot">
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <h:form>
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="control-group">
+	         <div class="controls">
+                     <h:inputText style="margin-left: 5%;" value="#{gb.message.topic}"  id="basicTopic" a:placeholder="Topic : " class="span5"/>
+                     <h:inputTextarea style="height: 100px;margin-left: 5%;" value="#{gb.message.message}"  id="basicinput" a:placeholder="Type your message here...." class="span5"/>
+                </div>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <h:commandButton  action="#{gb.sendNumeratorMessage()}" class="btn btn-primary" value="Send"></h:commandButton>
+      </div>
+    </div>
+    </h:form>    
+  </div>
+</div>
+        <!--/.wrapper-->
+        <div class="footer">
+            <div class="container">
+                <b class="copyright">2021 </b>All rights reserved.
+            </div>
+        </div>
+        <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    </h:body>
+</html>

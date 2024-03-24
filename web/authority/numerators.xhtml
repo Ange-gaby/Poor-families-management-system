@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
+
+<h:head>
+    <title>Active | Numerators</title>
+   
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"/>
+    <!-- waves.css -->
+    <link rel="stylesheet" href="assets/pages/waves/css/waves.min.css" type="text/css" media="all"/>
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css"/>
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css"/>
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/font-awesome/css/font-awesome.min.css"/>
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" />
+
+    
+    
+    
+    
+
+</h:head>
+
+<h:body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="mobile-search waves-effect waves-light">
+                            <div class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword"/>
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="authority-dashboard.xhtml">
+                            <img class="img-fluid" src="assets/images/logNNN.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                            </li>
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="header-notification">
+                                <a href="#!" class="waves-effect waves-light">
+                                    <i class="ti-bell"></i>
+                                    <span class="badge bg-c-red"></span>
+                                </a>
+                                <ul class="show-notification">
+                                    <li>
+                                        <h6>Notifications</h6>
+                                        <label class="label label-danger">New</label>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <div class="media">
+                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-2.jpg" alt="Generic placeholder image"/>
+                                            <div class="media-body">
+                                                <h5 class="notification-user">John Doe</h5>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <span class="notification-time">30 minutes ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <div class="media">
+                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-4.jpg" alt="Generic placeholder image"/>
+                                            <div class="media-body">
+                                                <h5 class="notification-user">Joseph William</h5>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <span class="notification-time">30 minutes ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <div class="media">
+                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-3.jpg" alt="Generic placeholder image"/>
+                                            <div class="media-body">
+                                                <h5 class="notification-user">Sara Soudein</h5>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <span class="notification-time">30 minutes ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="user-profile header-notification">
+                                <a href="#!" class="waves-effect waves-light">
+                                    <img src="assets/images/log.png" class="img-radius" alt="User-Profile-Image"/>
+                                    <span>#{gb.username}</span>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li class="waves-effect waves-light">
+                                        <a href="#!">
+                                            <i class="ti-settings"></i> Settings
+                                        </a>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <a href="user-profile.html">
+                                            <i class="ti-user"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <a href="email-inbox.html">
+                                            <i class="ti-email"></i> My Messages
+                                        </a>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <a href="auth-lock-screen.html">
+                                            <i class="ti-lock"></i> Lock Screen
+                                        </a>
+                                    </li>
+                                    <li class="waves-effect waves-light">
+                                        <a href="http://localhost:8080/PFI/faces/authentication/login/login.xhtml">
+                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <div class="user-details">
+<!--                                        <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>-->
+                                    </div>
+                                </div>
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <li class="more-details">
+                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="p-15 p-b-0">
+                                <form class="form-material">
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="footer-email" class="form-control"/>
+                                        <span class="form-bar"></span>
+                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Here</label>
+                                    </div>
+                                </form>
+                            </div>
+             <div class="pcoded-navigation-label">Navigation</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
+                                    <a href="authority-dashboard.xhtml" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Operations</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-pencil-alt "></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Numerator</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="create-numerator.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Create Numerator</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="numerators.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Numerators</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="disabled-numerator.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Disabled Numerator</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                 
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Residents</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-list "></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Residents</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="residents.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">All Residents</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="canceled-residents.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Canceled Residents</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                       
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Support</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Categories</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="add-support.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Add Support</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                       
+                                        <li class=" ">
+                                            <a href="health-support.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Health Support</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="education-support.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Education Support</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="economic-support.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Economic Development</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                       
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Selected</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="fa fa-users"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Families</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="health-selected.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Health Support</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="education-selected.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Education Support</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="economic-selected.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Economic Development</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                       
+                                    </ul>
+                                </li>
+                            </ul>
+                           
+                            <div class="pcoded-navigation-label">Reports</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu ">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="fa fa-book"></i></span>
+                                        <span class="pcoded-mtext">Categories</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="health-report.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Health Report</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="education-report.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Education Report</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="economic-report.xhtml" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+                                                <span class="pcoded-mtext">Economic Report</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <!-- Page-header start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Numerators List</h5>
+                                            <p class="m-b-0">List of All Active Numerators in #{gb.villageName}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="authority-dashboard.xhtml"> <i class="fa fa-th"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Numerators</a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="create-numerator.xhtml">#{gb.username }</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    
+                                                    <div style="width: 90%;">
+                                                            <h5 id="helpdiv" style="text-transform: uppercase; font-family: Cambria Math; font-size: 17px; font-weight: bolder; text-align: center;margin-left: 10%;">
+                                                            <p:messages></p:messages>
+                                                         </h5>
+                                                        </div>
+                                                    <div class="card-header" style="background-color: #007bb6;">
+                                                        <h5 style="color: white;">Active List</h5>
+                                                        <span style="color: white;">All Active Numerators</span>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <table id="example" class="table table-striped nowrap" style="width:100%">
+                                                                <thead>
+                                                                <tr>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">Full name</th>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">Gender</th>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">Phone Number</th>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">National ID</th>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">Village</th>
+                                                                  <th style="font-family: Cambria Math; text-transform: uppercase;font-weight: bolder;">Disable</th>
+                                                                  </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <c:forEach items="#{gb.allNumeratorByVillage}" var="rs" varStatus="status">
+                                                                         <tr>
+                                                                            <td style="font-family: Cambria Math;padding-top: 1.8%;">#{rs.firstname} #{rs.lastname}</td>
+                                                                            <td style="font-family: Cambria Math;padding-top: 1.8%;">#{rs.gender}</td>
+                                                                            <td style="font-family: Cambria Math;padding-top: 1.8%;">#{rs.phoneNumber}</td>
+                                                                            <td style="font-family: Cambria Math;padding-top: 1.8%;">#{rs.nationalID}</td>
+                                                                            <td style="font-family: Cambria Math;padding-top: 1.8%;">#{gb.villageName}</td>
+                                                                            <td>
+                                                                                <h:form>
+                                                                                <h:commandButton action="#{gb.disableNumerator(rs.id)}" class="btn waves-effect btn-danger" value="Disable"></h:commandButton>
+                                                                                </h:form>
+                                                                            </td>
+                                                                          </tr>
+                                                                        </c:forEach>
+                                                                         </tbody>
+                                                                    </table>
+                                                    </div>
+                                                </div>
+                                                <!-- Basic Form Inputs card end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                            <div id="styleSelector">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js "></script>
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>
+    <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js "></script>
+    <!-- waves js -->
+    <script src="assets/pages/waves/js/waves.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Custom js -->
+    <script src="assets/js/pcoded.min.js"></script>
+    <script src="assets/js/vertical/vertical-layout.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $( ".fixed-button" ).remove();
+    </script>
+    
+    <script>
+   $(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal( {
+                    header: function ( row ) {
+                        var data = row.data();
+                        return 'Details for '+data[0]+' '+data[1];
+                    }
+                } ),
+                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                    tableClass: 'table'
+                } )
+            }
+        }
+    } );
+} );
+    </script>
+                <script type="text/javascript">
+// close the div in 3 secs
+window.setTimeout("closeHelpDiv();", 3000);
+
+function closeHelpDiv(){
+document.getElementById("helpdiv").style.display=" none";
+}
+</script>
+    
+</h:body>
+
+</html>

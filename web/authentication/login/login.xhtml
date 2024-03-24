@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <link rel="stylesheet" href="css/style.css"/>
+
+    </head>
+    <h:body>
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-2">
+                        <h2 class="heading-section" style="font-family: Cambria Math;">Login</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="login-wrap py-5">
+                            <div class="img d-flex align-items-center justify-content-center " id="loginImage" style="height: 120px; width: 160px;"></div>
+                            <p class="text-center mb-0" style="font-family: Cambria Math; text-transform: uppercase;color:white;">Welcome TO</p>
+                            <p class="text-center" style="color:white;font-family: Cambria Math; text-transform: uppercase;">Poor Family Identification and Support Management System</p>
+                            <h:form class="login-form">
+                                <div class="form-group">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                    <p:inputText type="text" value="#{gb.user.username}" class="form-control" placeholder="Username" required=""/>
+                                </div>
+                                <div class="form-group">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                    <p:password  class="form-control" value="#{gb.user.password}" placeholder="Password" required=""/>
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <div class="w-100 text-md-right">
+                                        <a href="#">Forgot Password</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p:commandButton value="Login" action="#{gb.login()}" class="btn form-control btn-primary rounded submit px-3"></p:commandButton>
+                                </div>
+                            </h:form>
+                            <div class="w-100 text-center mt-4 text">
+                                <p class="mb-0">Don't have an account?</p>
+                                <a href="http://localhost:8080/PFI/faces/authentication/register/register-village.xhtml">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </h:body>
+</html>
+

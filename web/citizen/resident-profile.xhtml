@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en"
+       xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Resident | Profile</title>
+    <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/theme.css" rel="stylesheet"/>
+    <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet"/>
+    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+        rel='stylesheet'/>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="resident-dashboard.xhtml" style="text-transform: uppercase; font-family: Cambria Math; font-weight: bolder;">#{gb.villageName} </a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <ul class="nav nav-icons">
+                            <li class="active"><a href="inbox.xhtml"><i class="icon-envelope"></i></a></li>
+                            <li><a href="#"><i class="icon-bar-chart"></i></a></li>
+                        </ul>
+                        <form class="navbar-search pull-left input-append" action="#">
+                        <input type="text" class="span3"/>
+                        <button class="btn" type="button">
+                            <i class="icon-search"></i>
+                        </button>
+                        </form>
+                        <ul class="nav pull-right">
+                            
+                            <li><a href="resident-profile.xhtml">#{gb.username}</a></li>
+                            <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/user_1.png" class="nav-avatar" />
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Your Profile</a></li>
+                                    <li><a href="#">Edit Profile</a></li>
+                                    <li><a href="#">Account Settings</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="http://localhost:8080/PFI/faces/authentication/login/login.xhtml">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+            </div>
+            <!-- /navbar-inner -->
+        </div>
+    <!-- /navbar -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="sidebar">
+                            <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="resident-dashboard.xhtml"><i class="menu-icon icon-dashboard"></i>Home
+                                </a></li>
+                               
+                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-bullhorn">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Event News </a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="health-support.xhtml"><i class="icon-user-md"></i> Health Support </a></li>
+                                        <li><a href="education-support.xhtml"><i class="icon-book"></i> Education Support </a></li>
+                                        <li><a href="economic-support.xhtml"><i class="icon-money"></i> Economic Support </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="inbox.xhtml"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
+                                    #{gb.allResidentUnreadMessagesNumber}</b> </a></li>
+                                <li><a href="resident-profile.xhtml"><i class="menu-icon icon-user"></i>Profile</a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            <ul class="widget widget-menu unstyled">
+                                <li><a href="edit-profile.xhtml"><i class="menu-icon icon-edit"></i> Edit Profile </a></li>
+                                <li><a href="notification.xhtml"><i class="menu-icon icon-bell"></i>Notifications </a></li>
+                                <li><a href="numerator-profile.xhtml"><i class="menu-icon icon-user"></i>Numerator Profile </a></li>
+                                <li><a href="support-chart.xhtml"><i class="menu-icon icon-bar-chart"></i>Support Analysis </a></li>
+                                <li><a href="claimed.xhtml"><i class="menu-icon icon-refresh"></i>Claimed Support</a></li>
+                            </ul>
+                            <!--/.widget-nav-->
+                            <ul class="widget widget-menu unstyled">
+                               
+                                <li><a href="http://localhost:8080/PFI/faces/authentication/login/login.xhtml"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            </ul>
+                        </div>
+                    <!--/.sidebar-->
+                </div>
+                <!--/.span3-->
+                <div class="span9">
+                    <div class="content">
+                        <div class="module">
+                            <div class="module-body">
+
+                                <ul class="profile-tab nav nav-tabs">
+                                    <li class="active"><a href="#activity" data-toggle="tab">Profile</a></li>
+                                </ul>
+                                <div class="profile-tab-content tab-content">
+                                    <div class="tab-pane fade active in" id="activity">
+                                        <div class="stream-list">
+                                            <div class="media stream">
+                                                <a href="#" class="media-avatar medium pull-left">
+                                                    <img src="images/user.png"/>
+                                                </a>
+                                                <div class="media-body">
+                                                    <div class="stream-headline">
+                                                        <h5 class="stream-author">
+                                                            #{gb.username} <small>#{gb.resident.residentStatus}</small>
+                                                        </h5>
+                                                        <div class="stream-text">
+                                                            My name is #{gb.resident.firstname} #{gb.resident.lastname} and i was born in #{gb.resident.dob}, now i am living in #{gb.resident.village.name} village.
+                                                            I am #{gb.resident.martialStatus} and satisfied with my life, for now i am  classified in #{gb.resident.category} in living standard.
+                                                        </div>
+                                                        <div class="stream-attachment photo">
+                                                            <div class="responsive-photo">
+                                                                <img src="images/1.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/.stream-headline-->
+                                                    
+                                                </div>
+                                            </div>
+                                           
+                                          
+                                        </div>
+                                        <!--/.stream-list-->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--/.module-body-->
+                        </div>
+                        <!--/.module-->
+                    </div>
+                    <!--/.content-->
+                </div>
+                <!--/.span9-->
+            </div>
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.wrapper-->
+    <div class="footer">
+        <div class="container">
+            <b class="copyright"> 2021</b> All rights reserved.
+        </div>
+    </div>
+    <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
+</body>
+</html>
